@@ -29,12 +29,10 @@ $(document).ready(function() {
     var row = $("<div>").addClass("row time-block");
 
     // Creating an hour column
-    var hourCol = $("<div>")
-    .addClass("col-md-1 hour")
-    .text(moment(hour, "h").format("h A"));
+    var hourCol = $("<div>").addClass("col-md-1 hour").text(moment(hour, "h").format("h A"));
 
     // Creating a textarea column to enter the items for the scheduler
-    var textArea = $("<textarea>").addClass("col-md-10 justify-content-center");
+    var textArea = $("<textarea>").addClass("col-md-10");
     textArea.attr("id", "hour-" + hour);
 
     // How am I retrieving something saved here??
