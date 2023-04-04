@@ -34,8 +34,11 @@ $(document).ready(function() {
     .text(moment(hour, "h").format("h A"));
 
     // Creating a textarea column to enter the items for the scheduler
-    var textArea = $("<textarea>").addClass("col-md-10");
+    var textArea = $("<textarea>").addClass("col-md-10 justify-content-center");
     textArea.attr("id", "hour-" + hour);
+
+    // How am I retrieving something saved here??
+
 
     // Creating a save button column
     var saveBtn = $("<div>")
@@ -61,5 +64,10 @@ $(document).ready(function() {
 
     });
 
-
+    // Save event to local storage when save button is clicked
+    $(".saveBtn").on("click", function () {
+    var hour = $(this).data("hour");
+    var plannerText = $("#hour-" + hour).val();
+    localStorage.setItem("hour-" + hour, plannerText);
+    });
 });
