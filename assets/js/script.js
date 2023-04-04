@@ -37,8 +37,15 @@ $(document).ready(function() {
     var textArea = $("<textarea>").addClass("col-md-10");
     textArea.attr("id", "hour-" + hour);
 
-    // Appending everything together -  columns to the row
-    row.append(hourCol, textArea);
+    // Creating a save button column
+    var saveBtn = $("<div>")
+    .addClass("col-md-1 saveBtn")
+    .html('<i class="fas fa-save"></i>');
+    saveBtn.attr("data-hour", hour);
+
+
+    // Appending everything together -  columns to the row, added new saveBtn
+    row.append(hourCol, textArea, saveBtn);
 
     // Append the row to the container
     container.append(row);
