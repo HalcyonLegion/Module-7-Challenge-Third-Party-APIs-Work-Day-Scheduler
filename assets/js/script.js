@@ -43,12 +43,21 @@ $(document).ready(function() {
     .html('<i class="fas fa-save"></i>');
     saveBtn.attr("data-hour", hour);
 
-
     // Appending everything together -  columns to the row, added new saveBtn
     row.append(hourCol, textArea, saveBtn);
 
     // Append the row to the container
     container.append(row);
+
+    // Adding the Color-coding the Textarea based on past, present, and future classes as per the CSS.
+    var currentHour = moment().hour();
+    if (parseInt(hour) < currentHour) {
+      textArea.addClass("past");
+    } else if (parseInt(hour) === currentHour) {
+      textArea.addClass("present");
+    } else {
+      textArea.addClass("future");
+    }
 
     });
 
