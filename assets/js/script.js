@@ -11,7 +11,7 @@
 
 // Save the event in local storage when the save button is clicked in that timeblock. Using localstorage means I need to json stringify somewhere and then remember to parse it.
 
-// Persist events between refreshes of a page - prevent default.
+// Persist events between refreshes of a page - prevent default? No turns out I can just do it like the below.
 
 // Opening the page to start with looks like this entire thing is going to have to be driven by jQuery dynamically creating and appending various elements. The Demo Gif in the Readme seems to only have work hours - so Days are not a factor? Hours are 9-5pm.
 
@@ -35,13 +35,14 @@ $(document).ready(function() {
     var textArea = $("<textarea>").addClass("col-md-10");
     textArea.attr("id", "hour-" + hour);
 
-    // How am I retrieving something saved here??
+    // This is checking whether the local storage has anything saved and then populates that specific textarea with the appropriate value.
+    var savedEvent = localStorage.getItem("hour-" + hour);
+    if (savedEvent){
+        textArea.val(savedEvent);
+    }
 
-
-    // Creating a save button column
-    var saveBtn = $("<div>")
-    .addClass("col-md-1 saveBtn")
-    .html('<i class="fas fa-save"></i>');
+    // Creating a save button column with the Icon from fontawesome.
+    var saveBtn = $("<div>").addClass("col-md-1 saveBtn").html('<i class="fas fa-save"></i>');
     saveBtn.attr("data-hour", hour);
 
     // Appending everything together -  columns to the row, added new saveBtn
