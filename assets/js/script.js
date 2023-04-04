@@ -19,3 +19,8 @@ $(document).ready(function() {
     // Variables - I guess the work hours will need to be arrayed so they can be added to the page like in previous lessons.
     var workHours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
     var container = $(".container");
+
+    // I need to get the current day bit out the way - thankfully the html has a handy ID called currentDay I can grab for this.
+    $("#currentDay").text(moment().format("dddd, MMMM Do"));
+
+});
