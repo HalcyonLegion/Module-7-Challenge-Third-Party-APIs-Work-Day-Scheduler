@@ -37,5 +37,13 @@ $(document).ready(function() {
     var textArea = $("<textarea>").addClass("col-md-10");
     textArea.attr("id", "hour-" + hour);
 
+    // Appending everything together -  columns to the row
+    row.append(hourCol, textArea);
+
+    // Append the row to the container
+    container.append(row);
+
+    });
+
 
 });
