@@ -13,7 +13,7 @@ The App runs in the browser and allows the user to save what they've entered. Th
 The layout consists of the Hours on the left, Text in the center and the Save button on the right. At the top of the page there is Today's Date underneath the title.
 
 ## Installation
-Please visit this URL to see how the Application looks now: https://halcyonlegion.github.io/Module-7-Third-Party-APIs-Work-Day-Scheduler/
+Please visit this URL to see how the Application looks now: https://halcyonlegion.github.io/Module-7-Challenge-Third-Party-APIs-Work-Day-Scheduler/
 
 ## Usage
 
