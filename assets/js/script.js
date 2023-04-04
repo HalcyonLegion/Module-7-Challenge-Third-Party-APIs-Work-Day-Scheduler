@@ -31,7 +31,7 @@ $(document).ready(function() {
     // Creating an hour column
     var hourCol = $("<div>")
     .addClass("col-md-1 hour")
-    .text(moment(hour, "H").format("h A"));
+    .text(moment(hour, "h").format("h A"));
 
     // Creating a textarea column to enter the items for the scheduler
     var textArea = $("<textarea>").addClass("col-md-10");
