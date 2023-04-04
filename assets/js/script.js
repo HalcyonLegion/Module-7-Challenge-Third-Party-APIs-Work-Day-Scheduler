@@ -12,3 +12,10 @@
 // Save the event in local storage when the save button is clicked in that timeblock. Using localstorage means I need to json stringify somewhere and then remember to parse it.
 
 // Persist events between refreshes of a page - prevent default.
+
+//Opening the page to start with looks like this entire thing is going to have to be driven by jQuery dynamically creating and appending various elements. The Demo Gif in the Readme seems to only have work hours - so Days are not a factor? Hours are 9-5pm.
+
+$(document).ready(function() {
+    // Variables - I guess the work hours will need to be arrayed so they can be added to the page like in previous lessons.
+    var workHours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
+    var container = $(".container");
